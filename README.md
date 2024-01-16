@@ -12,9 +12,23 @@
 Рисунок 2 – Распиновка входного интерфейсного разъема светодиодной матрицы
 
 Таблица 1 – Пины входного интерфейсного разъема светодиодной матрицы и отладочной платы, которые необходимо подключить друг к другу
+
 ![таблица](https://github.com/AsliBWL/LED-Matrix-Game/assets/156215350/358de69a-895f-420e-bfa3-329d6e95339e)
+
 Создание стартового проекта в среде STM32CubeIDE
 1) В среде STM32CubeMX был создан начальный конфигурационный проект.
    1.1) System Core:
         RCC → HSE – Crystal/Ceramic Resonator
         SYS → Debug – Serial Wire
+   1.2)	Timers:
+         TIM2:
+         Clock Source – Internal Clock
+         Channel1 – Output Compare No Output
+         PSC = 25000 – 1 
+         Counter Mode – Up
+         ARR = 1000 – 1
+         NVIC Settings → TIM2 global interrupt → Enabled – галочка
+         Расчет значения регистра предделителя (Prescaler (PSC)) и периода таймера (Counter Period (AutoReload Register (ARR))) для TIM2:
+         M = 50 МГц – тактовая частота шины (APB1), с которой подается тактовый сигнал на таймер TIM2.
+         f – частота, с которой таймер должен генерировать прерывания.
+
