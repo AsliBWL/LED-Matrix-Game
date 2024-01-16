@@ -13,3 +13,8 @@
 
 Таблица 1 – Пины входного интерфейсного разъема светодиодной матрицы и отладочной платы, которые необходимо подключить друг к другу
 ![таблица](https://github.com/AsliBWL/LED-Matrix-Game/assets/156215350/358de69a-895f-420e-bfa3-329d6e95339e)
+Создание стартового проекта в среде STM32CubeIDE
+1) В среде STM32CubeMX был создан начальный конфигурационный проект.
+   1.1) System Core:
+        RCC → HSE – Crystal/Ceramic Resonator
+        SYS → Debug – Serial Wire
